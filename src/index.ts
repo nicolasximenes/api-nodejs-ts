@@ -12,9 +12,10 @@ if (process.env.IS_LOCALHOST !== 'true') {
   console.log('Rodando migrations...')
   
   Knex.migrate.latest().then(() => {
+    console.log('Rodando seeds...')
     Knex.seed.run().then(() => startServer()).catch(console.log)
   }).catch(console.log)
-  
+
 } else {
   startServer()
 }
