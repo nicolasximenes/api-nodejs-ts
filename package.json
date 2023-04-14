@@ -7,7 +7,7 @@
     "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
     "production": "node ./build/index.js",
     "build": "tsc",
-    "postinstall": "tsc && npm run knex:migrate",
+    "postinstall": "tsc",
     "knex:rollback-all": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback --all",
     "knex:rollback": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:rollback",
     "knex:migrate": "knex --knexfile ./src/server/database/knex/Environment.ts migrate:latest",
